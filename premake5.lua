@@ -30,16 +30,16 @@ project "glfw"
 	}
 	
 	includedirs {
-		"src"
+		"include"
 	}
 	
 	
-	filter "platforms:Windows"
+	filter "system:windows"
+		systemversion "latest"
 		defines {
 			"_GLFW_WIN32", 
 			"_CRT_SECURE_NO_WARNINGS"
 		}
-		systemversion "latest"
 		files {
 			"src/win32_time.h", 
 			"src/win32_thread.h", 
