@@ -54,6 +54,28 @@ project "glfw"
 			"src/win32_window.c", 
 			"src/wgl_context.c"
 		}
+
+	filter "system:macosx"
+		defines "_GLFW_COCOA"
+		files {
+			"src/cocoa_time.h", 
+			"src/posix_thread.h", 
+			"src/posix_module.c", 
+			"src/cocoa_time.c", 
+			"src/posix_thread.c", 
+			"src/cocoa_platform.h", 
+			"src/cocoa_joystick.h", 
+			"src/cocoa_init.m", 
+			"src/cocoa_joystick.m", 
+			"src/cocoa_monitor.m", 
+			"src/cocoa_window.m", 
+			"src/nsgl_context.m"
+		}
+		links {
+			"Cocoa.framework", 
+			"IOKit.framework", 
+			"CoreFoundation.framework"
+		}
 	
 	filter "configurations:Debug"
 		runtime "Debug"
